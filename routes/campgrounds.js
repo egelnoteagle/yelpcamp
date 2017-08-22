@@ -70,15 +70,6 @@ router.get("/:id/edit", middleware.checkCampgroundOwnership, function(req, res) 
 });
 
 // UPDATE CAMPGROUND ROUTE
-// router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
-//     Campground.findByIdAndUpdate(req.params.id, req.body.campground, function(err, updatedCampground){
-//         if(err){
-//             res.redirect("/campgrounds");
-//         } else {
-//             res.redirect("/campgrounds/" + req.params.id);
-//         }
-//     });
-// });
 
 router.put("/:id", function(req, res){
   geocoder.geocode(req.body.campground.location, function (err, data) {
